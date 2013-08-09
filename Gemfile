@@ -21,8 +21,6 @@ end
 platform :ruby do
   gem 'pg'
   gem 'sqlite3'
-  gem 'mysql2'
-  gem 'unicorn'
 end
 
 platforms :jruby do
@@ -36,13 +34,8 @@ platforms :jruby do
   gem 'thor'
 end
 
-group :rbx do
-  gem 'puma'
-end
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-group :development, :test do
-
+group :appservers do
+  gem 'puma', require: 'puma'
+  gem 'unicorn'
+  gem 'thin'
 end
