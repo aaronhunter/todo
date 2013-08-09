@@ -39,3 +39,7 @@ group :appservers do
   gem 'unicorn'
   gem 'thin'
 end
+
+group :development, :test do
+  gem 'pry'
+end
